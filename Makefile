@@ -13,3 +13,6 @@ obj/%.o: src/%.c
 
 clean:
 	rm -f obj/*.o $(TARGET)
+static:
+	ar rcs lib/libmyutils.a obj/mystrfunctions.o
+	$(CC) obj/main.o -L./lib -lmyutils -o bin/client_static
