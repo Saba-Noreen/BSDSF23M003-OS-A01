@@ -16,3 +16,7 @@ clean:
 static:
 	ar rcs lib/libmyutils.a obj/mystrfunctions.o
 	$(CC) obj/main.o -L./lib -lmyutils -o bin/client_static
+dynamic:
+	$(CC) -fPIC -I./include -c src/mystrfunctions.c -o obj/mystrfunctions.o
+	$(CC) -shared -o lib/libmyutils.so obj/mystrfunctions.o
+	$(CC) -I./include src/main.c -L./lib -lmyutils -o bin/client_dynamic
