@@ -1,0 +1,12 @@
+#include "../include/mystrfunctions.h"
+
+int mystrlen(const char *s) {
+    int i = 0;
+    while (s[i] != '\0') i++;
+    return i;
+}
+
+void mystrcpy(char *dest, const char *src) {
+    int i = 0;
+    while ((dest[i] = src[i]) != '\0') i++;
+}
